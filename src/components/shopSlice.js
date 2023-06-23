@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { fakeFetch, PRODUCTS } from "../components/Api/Api";
 
 const SLICE = "shop";
-const initalState = {
+const initialState = {
   products: [],
   status: false,
   basket: [],
@@ -20,7 +20,7 @@ export const loadProducts = createAsyncThunk("counter/fetchCount", async () => {
 
 export const shopSlice = createSlice({
   name: SLICE,
-  initalState,
+  initialState,
   reducers: {
     setProduct: (state, action) => {
       state.products = state.products.map((item) => {
@@ -52,7 +52,7 @@ export const { setBasket, setProduct } = shopSlice.actions;
 
 export const selectProducts = (state) => ({
   items: state[SLICE].products,
-  loading: state[SLICE].status === "loadong",
+  loading: state[SLICE].status === "loading",
 });
 
 export const selectProduct = (id) => (state) => {

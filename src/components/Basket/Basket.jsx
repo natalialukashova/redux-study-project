@@ -41,7 +41,7 @@ export function Basket() {
         {formatMessage(items.length, total)}
       </button>
       {opened ? (
-        <div className={styles.basketContainer}>
+        <div className={styles.basketContent}>
           {items.map((id) => (
             <BasketItem key={id} id={id} />
           ))}
